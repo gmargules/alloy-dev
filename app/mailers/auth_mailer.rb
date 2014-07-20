@@ -1,9 +1,8 @@
 class AuthMailer < ActionMailer::Base
-  default from: Settings.server_url
+  default from: "admin@mysize-dev.herokuapp.com"
 
   def reset_password(user)
-    @creator = user
-
-    mail to: @creator.user.email, subject: "nice! you're a VeedMe creator"
+    @user = user
+    mail to: @user.email, subject: "MySize Password Reset"
   end
 end

@@ -78,4 +78,35 @@ class Api::V1::AuthController < Api::V1::ApiController
 			save_error
 		end
 	end
+
+	def reset_password
+		unless params[:email].blank?
+			user = User.find_by(email: params[:email])
+
+			# create a unique password reset token
+      begin 
+      	user.reset_password_token = SecureRandom.hex(16)
+      	user.reset_password_sent_at = Time.now
+      end while User.find_by(reset_password_token: user.reset_password_token)
+
+     	if user.save
+     		AuthMailer.reset_password(user)
+     		render json: { "response_code"=>"200", "response_text"=>"reset password email sent" }
+     	else
+     		save_error
+     	end
+		end
+	end
+
+	def set_new_password
+		unless params[:email].blank? || params[:token].blank?
+			user = User.find_by(email: params[:email], reset_password_token: params[:token])
+
+			@valid = user && user.reset_password_sent_at < Time.now - 1.minute
+		else
+			@valid = true
+		end
+
+		render 'auth/set_password'
+	end
 end
