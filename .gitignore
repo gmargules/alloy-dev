@@ -14,7 +14,3 @@
 /log/*.log
 /tmp
 /public/uploads/tmp
-
-*.lock
-
-Gemfile.lock
