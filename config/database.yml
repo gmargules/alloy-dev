@@ -1,0 +1,7 @@
+development: &default
+  database: mysize
+  adapter: postgresql
+  encoding: unicode
+  host: localhost
+  password: kofkof12 
+  username: postgres

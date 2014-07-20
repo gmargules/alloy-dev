@@ -1,0 +1,7 @@
+# config/application.yml
+defaults: &defaults
+	server_url: localhost:3000
+  session_length: 12
+
+development:
+  <<: *defaults
