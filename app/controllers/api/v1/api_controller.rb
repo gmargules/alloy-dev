@@ -1,4 +1,4 @@
-class Api::V1::ApiController < ActionController::Base
+class Api::V1::ApiController < ApplicationController
 	attr_reader :current_user
 
 	respond_to :json
@@ -10,7 +10,7 @@ class Api::V1::ApiController < ActionController::Base
 		def current_user
 			authenticate_with_http_token do |token, options|
 				@key = ApiKey.find_by(token: token)
-				if @key
+				if @key && !@key.user.is_blocked
     			@current_user = @key.user
     		end
     	end
