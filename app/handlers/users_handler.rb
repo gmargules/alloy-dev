@@ -65,7 +65,6 @@ class UsersHandler < MySize::API
         @current_user.last_name = params[:last_name]
         @current_user.username = params[:username]
         @current_user.password = params[:password]
-        @current_user.is_active = true
 
         error!('Could not create user', HTTP_INTERNAL_SERVER_ERROR) unless @current_user.save
         status HTTP_CREATED
