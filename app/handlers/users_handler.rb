@@ -124,10 +124,7 @@ class UsersHandler < MySize::API
       optional :thumb
     end
     post do
-      @current_user.bust = params[:bust] unless params[:bust].blank?
-      @current_user.bust = params[:waist] unless params[:waist].blank?
-      @current_user.bust = params[:thumb] unless params[:thumb].blank?
-      error!('Could not set new password', HTTP_INTERNAL_SERVER_ERROR) unless @current_user.save    
+      error!('Could not update user data', HTTP_INTERNAL_SERVER_ERROR) unless @current_user.update_attributes({ bust: params[:bust], waist: params[:waist], thumb: params[:thumb] }.reject{ |k,v| v.blank? })  
     end      
   end
 end
