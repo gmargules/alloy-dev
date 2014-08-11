@@ -3,6 +3,6 @@ class AuthMailer < ActionMailer::Base
 
   def reset_password(user)
     @user = user
-    mail to: @user.email, subject: "MySize Password Reset"
+    mail to: @user.username, subject: "MySize Password Reset"
   end
 end
