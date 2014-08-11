@@ -16,9 +16,7 @@ module MySize
 
     helpers do
       def current_user
-        authenticate_with_http_token do |token, options|
-          @current_user ||= User.active.find_by(access_token: token)
-        end
+        @current_user ||= User.active.find_by(access_token: params[:token])
       end
 
       def restrict_access
