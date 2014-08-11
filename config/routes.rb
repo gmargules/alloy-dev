@@ -1,24 +1,17 @@
 Mysize::Application.routes.draw do
+  # active admin
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
-  namespace :api do
-    namespace :v1, defaults: { format: :json }, except: [:new, :edit] do
-      namespace :auth do
-        post 'sign_in'
-        post 'sign_up'
-        post 'sign_out'
-        post 'reset_password'
-        get 'get_new_password', defaults: { format: :html }
-        post 'set_new_password', defaults: { format: :html }
-      end 
+  
+  # api server
+  mount MySize::API => '/api'
+  
+  # web widget
+  get :signup, to: 'users#new'
+  get :login, to: 'sessions#new'
+  get :logout, to: 'sessions#destroy'
 
-      resource :user, only: [:update] do
-      
-      end
-
-      namespace :size do
-        get 'query'
-      end
-    end
+  resource :web_widget do
+  	get :main
   end
 end

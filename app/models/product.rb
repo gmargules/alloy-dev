@@ -8,11 +8,13 @@
 #  name        :string(255)
 #  thumb       :string(255)
 #  description :text
-#  price       :float
+#  price       :decimal(10, 2)
 #  created_at  :datetime
 #  updated_at  :datetime
+#  category_id :integer
 #
 
 class Product < ActiveRecord::Base
 	belongs_to :business
+	belongs_to :category
 end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140727092442) do
+ActiveRecord::Schema.define(version: 20140811072123) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -70,6 +70,13 @@ ActiveRecord::Schema.define(version: 20140727092442) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "is_blocked",                           default: false
+    t.string   "token"
+  end
+
+  create_table "categories", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "logs", force: true do |t|
@@ -89,6 +96,7 @@ ActiveRecord::Schema.define(version: 20140727092442) do
     t.decimal  "price",       precision: 10, scale: 2
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "category_id"
   end
 
   create_table "sizes", force: true do |t|
@@ -100,11 +108,12 @@ ActiveRecord::Schema.define(version: 20140727092442) do
     t.decimal  "max_waist",   precision: 6, scale: 2
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "category_id"
   end
 
   create_table "users", force: true do |t|
-    t.string   "email"
-    t.string   "password_hash"
+    t.string   "username"
+    t.string   "password"
     t.string   "first_name"
     t.string   "last_name"
     t.decimal  "bust",                   precision: 6, scale: 2, default: 0.0
@@ -118,9 +127,11 @@ ActiveRecord::Schema.define(version: 20140727092442) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "thumb"
+    t.integer  "auth_type",                                      default: 0
+    t.string   "access_token"
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", using: :btree
+  add_index "users", ["username"], name: "index_users_on_username", using: :btree
 
 end
