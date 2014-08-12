@@ -78,7 +78,7 @@ Mysize::Application.configure do
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
 
-  config.action_mailer.default_url_options = { host: 'www.mysize-dev.herokuapp.com' }
+  config.action_mailer.default_url_options = { host: 'mysize-dev.herokuapp.com' }
   # ActionMailer Config
   # Setup for production - deliveries, no errors raised
   config.action_mailer.delivery_method = :smtp
@@ -89,7 +89,7 @@ Mysize::Application.configure do
     port: 25, 
     user_name: ENV['SENDGRID_USERNAME'],
     password: ENV['SENDGRID_PASSWORD'],
-    domain: 'www.mysize-dev.herokuapp.com',
+    domain: 'mysize-dev.herokuapp.com',
     authentication: 'plain', 
     enable_starttls_auto: true 
   }
