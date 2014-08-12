@@ -95,22 +95,6 @@ class UsersHandler < MySize::API
     AuthMailer.reset_password(user).delive      
   end 
 
-  #-----[POST]/set_new_password-----
-  desc 'Set new password'
-  params do
-    requires :username, type: String
-    requires :password, type: String
-    requires :reset_password_token, type: String
-  end
-  post :set_new_password do
-    user = User.active.find_by(username: params[:username], reset_password_token: params[:reset_password_token])
-    error!('Invalid password reset token', HTTP_UNAUTHORIZED) if user.blank? || user.reset_password_sent_at >= 1.hour.ago
-    user.password = params[:password]
-    user.reset_password_token = nil
-    user.reset_password_sent_at = nil
-    error!('Could not set new password', HTTP_INTERNAL_SERVER_ERROR) unless user.save    
-  end 
-
   resource :profile do
     after_validation do
       restrict_access

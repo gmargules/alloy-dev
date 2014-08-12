@@ -56,7 +56,8 @@ class User < ActiveRecord::Base
 	end
 
 	class Entity < Grape::Entity
-		expose :id, documentation: { type: 'integer' }  
+		expose :id, documentation: { type: 'integer' } 
+		expose :username, documentation: { type: 'string' } 
 	    expose :first_name, documentation: { type: 'string', desc: "The user's first name" }
 	    expose :last_name, documentation: { type: 'string', desc: "The user's last name" }
 	    expose :bust, documentation: { type: 'decimal', desc: "The user's bust size" }
