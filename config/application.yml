@@ -1,5 +1,19 @@
 defaults: &defaults
   session_length: 12
 
+  # facebook
+  fb_app_id: 309515762543768
+  fb_access_token: 309515762543768|f4efd46be7c1dc191867b6b3388279a4
+
 development:
   <<: *defaults
+
+testing:
+  <<: *defaults
+
+staging:
+  <<: *defaults  
+
+production:
+  <<: *defaults
+
