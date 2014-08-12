@@ -92,7 +92,7 @@ class UsersHandler < MySize::API
     end while User.find_by(reset_password_token: user.reset_password_token)
 
     error!('Could not issue password reset token', HTTP_INTERNAL_SERVER_ERROR) unless user.save
-    AuthMailer.reset_password(user).delive      
+    AuthMailer.reset_password(user).deliver     
   end 
 
   resource :profile do
