@@ -5,6 +5,11 @@ defaults: &defaults
   fb_app_id: 309515762543768
   fb_access_token: "309515762543768|f4efd46be7c1dc191867b6b3388279a4"
 
+  #AWS S3
+  aws_access_key_id: AKIAINSMNMNHGDJT2IRQ
+  aws_secret_access_key: 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
+  aws_s3_bucket:  
+
 development:
   <<: *defaults
 
