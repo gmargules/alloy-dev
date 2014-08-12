@@ -18,6 +18,7 @@
 
 class Business < ActiveRecord::Base
   has_many :logs
+  has_many :sizes, dependent: :destroy
 	has_many :products, dependent: :destroy
 
   scope :active, -> { where("is_blocked = ?", false) }	

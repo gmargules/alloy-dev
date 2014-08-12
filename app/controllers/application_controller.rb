@@ -5,9 +5,7 @@ class ApplicationController < ActionController::Base
 
 private
 	def current_user
-    if !request.ssl? || cookies.signed[:secure_token] == "secure#{session[:token]}"
-      @current_user ||= User.active.find_by(access_token: session[:token]) if session[:auth_token]
-    end
+		@current_user ||= User.active.find_by(access_token: cookies[:token]) if cookies[:token]
 	end 
 	
 	def authorize

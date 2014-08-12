@@ -1,4 +1,6 @@
 class WebWidgetsController < ApplicationController
+	before_filter :current_user
+
 	def main
 		if @current_user
 			# suggest a size for the given product; get business and product
@@ -8,7 +10,7 @@ class WebWidgetsController < ApplicationController
 				product = business.products.find_by(serial: params[:product_id])
 				unless product.blank?
 					# query the business's size chart
-					@result = business.sizes.where('category = ? and ((min_bust >= :bust and max_bust <= :bust) or (min_waist >= :waist and max_waist <= :waist))', product.category_id, bust: @current_user.bust, waist: @current_user.waist)
+					@result = business.sizes.where('category_id = :category and ((min_bust <= :bust and max_bust >= :bust) or (min_waist <= :waist and max_waist >= :waist))', category: product.category_id, bust: @current_user.bust, waist: @current_user.waist).first
 				end
 			end
 		end

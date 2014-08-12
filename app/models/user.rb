@@ -39,6 +39,22 @@ class User < ActiveRecord::Base
 	AUTH_TYPE_PASSWORD = 0
 	AUTH_TYPE_FACEBOOK = 1
 
+	def password
+		if auth_type == AUTH_TYPE_PASSWORD
+			Password.new(read_attribute(:password))
+		else 
+			read_attribute(:password)
+		end
+	end
+
+	def password=(new_password)
+		if auth_type == AUTH_TYPE_PASSWORD
+			write_attribute(:password, Password.create(new_password))
+		else
+			write_attribute(:password, new_password)
+		end
+	end
+
   	def full_name
     	"#{self.first_name} #{self.last_name}".downcase
   	end

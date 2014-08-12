@@ -9,6 +9,7 @@ Mysize::Application.routes.draw do
   # web widget
   get :signup, to: 'users#new'
   get :login, to: 'sessions#new'
+  post :login, to: 'sessions#create'
   get :logout, to: 'sessions#destroy'
   get :reset_password, to: 'password_resets#new'
   post :reset_password, to: 'password_resets#create'
