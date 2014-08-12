@@ -6,7 +6,7 @@ class UsersHandler < MySize::API
         res_hash = JSON.parse(response)
 
         if (response.code == 200)
-          if res_hash["data"]["app_id"] == Settings.fb_app_id && res_hash["data"]["user_id"].to_s == fb_id && res_hash["data"]["is_valid"] == true
+          if res_hash["data"]["app_id"] == Settings.fb_app_id.to_s && res_hash["data"]["user_id"] == fb_id && res_hash["data"]["is_valid"] == true
             # do we need to check for specific scopes?
             unless scopes.blank?
               scopes.split(/, ?/).each do |s|
