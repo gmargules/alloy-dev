@@ -12,6 +12,7 @@ gem 'grape-swagger'
 gem 'pg'
 
 #settings
+gem 'rest-client'
 gem 'settingslogic'
 gem 'activeadmin', github: 'gregbell/active_admin'
 gem 'devise'
