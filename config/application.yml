@@ -8,7 +8,7 @@ defaults: &defaults
   #AWS S3
   aws_access_key_id: AKIAINSMNMNHGDJT2IRQ
   aws_secret_access_key: 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
-  aws_s3_bucket:  
+  aws_s3_bucket: mysize-dev 
 
 development:
   <<: *defaults
