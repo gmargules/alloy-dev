@@ -25,6 +25,8 @@ class Business < ActiveRecord::Base
 
   validates :token, uniqueness: true, :allow_blank => false
 
+  mount_uploader :logo, ThumbUploader
+
   before_create :generate_token
 
 private
