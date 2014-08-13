@@ -31,7 +31,7 @@ class UsersHandler < MySize::API
        entity: User::EntityWithToken,
        entity_dependencies: [User::EntityWithToken]
   params do
-    requires :username, type: String
+    requires :username, type: String, regexp: /^.+$/
     requires :password, type: String, regexp: /^.+$/
     requires :auth_type, type: Integer, values: [User::AUTH_TYPE_PASSWORD, User::AUTH_TYPE_FACEBOOK]
     optional :first_name, type: String
