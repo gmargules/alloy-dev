@@ -2,8 +2,8 @@
 	<div class="row">
 		<div class="col-xs-12 col-md-12">
 			<% if @current_user %>
-				Currently signed in as <%= @current_user.display_name %>.
-				<%= link_to 'Log out', logout_path %>.
+				<h1>Currently signed in as <%= @current_user.display_name %>.
+				<%= link_to 'Log out', logout_path %>.</h1>
 				<% unless @result.blank? %>
 					<div class="alert alert-success">The suggested size for this product is <%= @result.name %></div>	
 				<% end %>	
