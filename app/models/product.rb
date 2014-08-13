@@ -6,9 +6,6 @@
 #  business_id :integer
 #  serial      :string(255)
 #  name        :string(255)
-#  thumb       :string(255)
-#  description :text
-#  price       :decimal(10, 2)
 #  created_at  :datetime
 #  updated_at  :datetime
 #  category_id :integer
