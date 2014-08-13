@@ -1,0 +1,29 @@
+@media all and (max-width: 1200px) { /* screen size until 1200px */
+    body {
+        font-size: 1.5em;
+    }
+
+    h1 {
+        font-size: 2.5em;
+    }
+}
+
+@media all and (max-width: 1000px) { /* screen size until 1000px */
+    body {
+        font-size: 1.2em;
+    }
+
+    h1 {
+        font-size: 2.2em;
+    }
+}
+
+@media all and (max-width: 500px) { /* screen size until 500px */
+    body {
+        font-size: 0.8em;
+    }
+
+    h1 {
+        font-size: 1.8em;
+    }
+}
