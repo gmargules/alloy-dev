@@ -3,7 +3,7 @@ class PasswordResetsController < ApplicationController
   end
 
   def create
-    puts User.all.to_json
+    puts User.active.all.to_json
     user = User.active.find_by(username: params[:email])
     puts "!!!!!!!!!!!"
     puts user.to_json
