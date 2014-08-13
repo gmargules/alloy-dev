@@ -4,7 +4,7 @@ class PasswordResetsController < ApplicationController
 
   def create
     user = User.active.find_by(username: params[:email])
-    return render :new, alert: 'Invalid email address.' if user.blank? || user.auth_type != User::AUTH_TYPE_PASSWORD
+    return redirect_to :back, alert: 'Invalid email address.' if user.blank? || user.auth_type != User::AUTH_TYPE_PASSWORD
 
     # create a unique password reset token
     begin 
