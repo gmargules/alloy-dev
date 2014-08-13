@@ -1,3 +1,7 @@
+body {
+    background-color: #ebebeb;    
+}
+
 @media all and (max-width: 1200px) { /* screen size until 1200px */
     body {
         font-size: 1.5em;
@@ -20,10 +24,10 @@
 
 @media all and (max-width: 500px) { /* screen size until 500px */
     body {
-        font-size: 0.8em;
+        font-size: 1.1em;
     }
 
     h1 {
-        font-size: 1.8em;
+        font-size: 2em;
     }
 }
