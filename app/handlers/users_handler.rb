@@ -105,8 +105,8 @@ class UsersHandler < MySize::API
     #-----[POST]/profile-----
     desc 'Update user data'
     params do
-      optional :bust, type: String
-      optional :waist, type: String
+      optional :bust, type: BigDecimal
+      optional :waist, type: BigDecimal
       optional :thumb
     end
     post do

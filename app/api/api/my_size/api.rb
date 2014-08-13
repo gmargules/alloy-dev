@@ -24,6 +24,11 @@ module MySize
       end      
     end
 
+    before do
+      # log sent parameters
+      puts ({ params: params })
+    end
+
     after_validation do
       # set the default status code for successful requests
       status HTTP_OK      
