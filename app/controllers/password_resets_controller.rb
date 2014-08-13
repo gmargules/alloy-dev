@@ -3,6 +3,9 @@ class PasswordResetsController < ApplicationController
   end
 
   def create
+    puts "!!!!!!!!!!!!"
+    puts User.active.find_by(username: params[:email]).to_json
+    puts User.active.where('username = ?', params[:email]).to_json
     user = User.active.find_by(username: params[:email])
     return redirect_to :back, alert: 'Invalid email address.' if user.blank? || user.auth_type != User::AUTH_TYPE_PASSWORD
 
