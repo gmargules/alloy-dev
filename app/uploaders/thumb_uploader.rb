@@ -33,8 +33,6 @@ class ThumbUploader < CarrierWave::Uploader::Base
   #   # do something
   # end
 
-  include CarrierWave::MimeTypes
-  process :set_content_type
   process :resize_to_fill => [400, 400]
 
   # Add a white list of extensions which are allowed to be uploaded.

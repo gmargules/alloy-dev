@@ -57,9 +57,7 @@ class UsersHandler < MySize::API
     else
       # create a new user
       unless params[:first_name].blank? || params[:last_name].blank?
-        if @current_user.blank?
-          @current_user = User.new
-        end
+        @current_user = User.new
 
         @current_user.first_name = params[:first_name]
         @current_user.last_name = params[:last_name]
@@ -94,7 +92,6 @@ class UsersHandler < MySize::API
 
     error!('Could not issue password reset token', HTTP_INTERNAL_SERVER_ERROR) unless user.save
     AuthMailer.reset_password(user).deliver  
-    { status: 'ok' }  
   end 
 
   resource :profile do
