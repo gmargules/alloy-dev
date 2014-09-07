@@ -40,8 +40,12 @@ textarea:focus, input:focus{
 body {
 
     .alert-danger{
-       font-size: 25px;
+       font-size: 30.89px;
        width: 100%;
+       color: #fe7272;
+       border: 0;
+       text-align: center;
+       background-color: rgba(254,114,114,0.25);
     }
 
     background-color: #e9e9ea;
