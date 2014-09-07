@@ -40,10 +40,12 @@ class User < ActiveRecord::Base
 	AUTH_TYPE_FACEBOOK = 1
 
 	def password
-		if auth_type == AUTH_TYPE_PASSWORD
-			Password.new(read_attribute(:password))
-		else 
-			read_attribute(:password)
+		unless read_attribute(:password).blank?
+			if auth_type == AUTH_TYPE_PASSWORD
+				Password.new(read_attribute(:password))
+			else 
+				read_attribute(:password)
+			end
 		end
 	end
 

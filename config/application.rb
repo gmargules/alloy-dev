@@ -25,6 +25,12 @@ module Mysize
     
     # Grape Configuration
     config.paths.add File.join('app', 'api'), glob: File.join('**', '*.rb')
-    config.autoload_paths += Dir[Rails.root.join('app', 'api', '*')]    
+    config.autoload_paths += Dir[Rails.root.join('app', 'api', '*')]
+
+    # Add the fonts path
+    config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
+
+    # Precompile additional assets
+    config.assets.precompile += %w( .svg .eot .woff .ttf )    
   end
 end

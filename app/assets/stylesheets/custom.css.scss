@@ -1,6 +1,189 @@
-body {
-    background-color: #ebebeb;    
+@font-face {
+    font-family: 'arvil';
+    src: url(asset-path('arvil-regular.eot'));
+    src: url(asset-path('arvil-regular.eot?#iefix')) format('embedded-opentype'),
+         url(asset-path('arvil-regular.woff')) format('woff'),
+         url(asset-path('arvil-regular.ttf')) format('truetype'),
+         url(asset-path('arvil-regular.svg#arvil_sansregular')) format('svg');
+    font-weight: normal;
+    font-style: normal;
+
 }
+
+@font-face {
+    font-family: 'opensans';
+    src: url(asset-path('opensans-regular.eot'));
+    src: url(asset-path('opensans-regular.eot?#iefix')) format('embedded-opentype'),
+         url(asset-path('opensans-regular.woff')) format('woff'),
+         url(asset-path('opensans-regular.ttf')) format('truetype'),
+         url(asset-path('opensans-regular.svg#open_sansregular')) format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+input:-webkit-autofill {
+    -webkit-box-shadow:0 0 0 50px white inset; /* Change the color to your own background color */
+    -webkit-text-fill-color: #908c8c;
+}
+input:-webkit-autofill:focus {
+    -webkit-box-shadow:0 0 0 50px white inset; /* Change the color to your own background color */
+    -webkit-text-fill-color: #908c8c;
+}
+
+textarea:focus, input:focus{
+    outline: 0;
+}
+
+
+
+body {
+
+    .alert-danger{
+       font-size: 25px;
+       width: 100%;
+    }
+
+    background-color: #e9e9ea;
+    font-family: "arvil";
+    .title_container{
+        text-align: center;
+        width: 100%;
+        padding: 0 55px;
+        margin-bottom: 30px;
+        h1{
+            display: inline-block;
+            color: rgb(251,180,40);
+            font-size: 73.79px;
+        }
+        img{
+            display: inline-block;
+            height: 52px;
+            vertical-align: baseline;
+            margin-left: 12px;
+        }
+    }
+    .textbox_container{
+        box-shadow: 3px 5px 5px #cccccd;
+        padding: 0;
+        text-align: left;
+        float: none;
+        margin-bottom: 30px;
+
+        .mysize_textbox{
+            margin: 0;
+            border-radius: 2px;
+            color: rgb(144,140,140);
+            font-size: 36.89px;
+            background-color: rgb(254,255,255);
+            border: 0;
+            width: 100%;
+            padding-left: 20px;
+        }
+        .username_textbox{
+            border-bottom: 2px solid rgba(4,4,4,0.25);
+        }
+
+    }
+    .forgot_container{
+        text-align: right;
+        h2{
+            font-family: "arvil";
+            color: #8c8b8b;
+            font-size: 36.89px;
+            cursor: pointer;
+        }
+    }
+    .logged_title_container{
+        text-align: center;
+        padding: 0 165px;
+        margin-bottom: 30px;
+        h1{
+            font-family: "arvil";
+            color: rgb(251,180,40);
+            font-size: 104px;
+            width: 100%;
+        }
+        
+    }
+    .nice_container{
+        text-align: center;
+        section{
+            font-family: "opensans";
+            display: block;
+            color: rgb(144,140,140);
+            font-size: 32px;
+            padding: 0 50px;
+
+        }
+        h2{
+            font-family: "arvil";
+            display: block;
+            color: rgb(251,180,40);
+            font-size: 64px;
+            margin-bottom: 30px;
+        }
+    }
+    .button_padding{
+        padding-right: 150px;
+        padding-left: 150px;
+       .logout_button{
+        font-family: "opensans";
+        font-size: 26px;
+        } 
+    }
+    
+}
+
+ .centered_text_container{
+    text-align: center;
+ }
+ 
+.azure_button{
+    background-color: rgb(80,197,144);
+    box-shadow: 2px 2px 3px #3aa072;
+    font-family: "arvil";
+    text-align: center;
+    border-radius: 3px;
+    color: rgb(255,255,255);
+    padding: 0;
+    width: 100%;
+    cursor: pointer;
+    display: block;
+    margin: 0 auto;
+    font-size: 54.19px;
+    border: 0;
+
+
+
+/*
+display: inline-block;
+margin-bottom: 0;
+font-weight: normal;
+text-align: center;
+vertical-align: middle;
+cursor: pointer;
+background-image: none;
+border: 1px solid transparent;
+white-space: nowrap;
+padding: 6px 12px;
+font-size: 14px;
+line-height: 1.428571429;
+border-radius: 4px;
+-webkit-user-select: none;
+*/
+
+}
+
+.white_text{
+    color: rgb(254,255,255);
+}
+.yellow_text{
+    color: rgb(251,180,40);
+}
+
+
+
 
 @media all and (max-width: 1200px) { /* screen size until 1200px */
     body {
