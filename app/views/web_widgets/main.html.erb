@@ -33,7 +33,9 @@
 							<%= text_field_tag :username, params[:username], class: 'mysize_textbox username_textbox', placeholder: 'USERNAME' %>
 							<%= password_field_tag :password, params[:password], class: 'mysize_textbox', placeholder: 'PASSWORD' %>
 			  			</div>
-						<%= submit_tag 'LOGIN', class: 'azure_button' %>
+			  			<div class ="azure_button">
+						<%= submit_tag 'LOGIN', class: 'login_button' %>
+						<%= image_tag("login_arrow.png")%>
 					<% end %>
 				</div>
 				<div class="forgot_container">
