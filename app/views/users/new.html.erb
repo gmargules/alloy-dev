@@ -36,9 +36,9 @@
     		<div >
 				<%= form_for @user, :html => {:autocomplete => "off"} do |f| %>
 					<div class="textbox_container">
-						<%= f.text_field :Height, class: 'mysize_textbox bottom_border_textbox', placeholder: 'USERNAME' %>
-						<%= f.text_field :Bust, class: 'mysize_textbox bottom_border_textbox', placeholder: 'PASSWORD' %>
-						<%= f.text_field :Waist, class: 'mysize_textbox', placeholder: 'CONFIRM PASSWORD' %>
+						<%= f.text_field :height, class: 'mysize_textbox bottom_border_textbox', placeholder: 'USERNAME' %>
+						<%= f.text_field :bust, class: 'mysize_textbox bottom_border_textbox', placeholder: 'PASSWORD' %>
+						<%= f.text_field :waist, class: 'mysize_textbox', placeholder: 'CONFIRM PASSWORD' %>
 					</div>
 	  				<%= button_tag( class: 'azure_button', type: :submit) do %>
 	  					NEXT
