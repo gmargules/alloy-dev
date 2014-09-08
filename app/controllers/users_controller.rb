@@ -31,6 +31,6 @@ class UsersController < ApplicationController
   		return redirect_to :back, alert: 'Last name is missing'
   	end
   	User.create(username: params[:user][:username], password: params[:user][:password], first_name: params[:user][:first_name], last_name: params[:user][:last_name])
-	return redirect_to edit_user_path
+	render 'edit'
   end
 end
