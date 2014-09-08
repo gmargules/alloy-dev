@@ -1,7 +1,7 @@
 class SessionsController < ApplicationController
   def create
     user = User.find_by(username: params[:username])
-    if user && user.password
+    if user && user.password == params[:password]
       cookies.permanent[:token] = user.access_token
       redirect_to :back
     else
