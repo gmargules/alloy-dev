@@ -2,33 +2,26 @@
 	<div class="row">
 		<div class="col-xs-12 col-md-12">
 			<div class="title_container">
-					<h1>SIGN UP TO</h1>
-					<%= image_tag("mysize_logo.png") %>
-				</div>
-	    		<% unless flash[:alert].blank? %>
-	    			<div class="alert alert-danger"><%= flash[:alert] %></div>
-	    		<% end %>
-	    		<div >
-					<%= form_for @user do |f| %>
-						<div class="textbox_container">
-							<%= text_field_tag :username, params[:username], class: 'mysize_textbox username_textbox', placeholder: 'USERNAME' %>
-							<%= password_field_tag :password, params[:password], class: 'mysize_textbox', placeholder: 'PASSWORD' %>
-			  			</div>
-			  				<%= button_tag( class: 'azure_button', type: :submit) do %>
-			  				LOGIN
-			                  <%= image_tag("login_arrow.png")%>
-			                <% end %>
-					<% end %>
-				</div>
-				<div >
-					<h2 class="forgot_container">FORGOT PASSWORD?</h2>
-					<%= link_to signup_path , class: 'not_a_member_container' do %>
-						<h2>NOT A MEMBER?</h2>
-					<%end%>
-				</div>
-
-
-
+				<h1>BODY MEASURMENTS</h1>
+			</div>
+    		<% unless flash[:alert].blank? %>
+    			<div class="alert alert-danger"><%= flash[:alert] %></div>
+    		<% end %>
+    		<div >
+				<%= form_for @current_user, :html => {:autocomplete => "off"} do |f| %>
+					<div class="textbox_container">
+						<% f.errors.each do |att,mes| %>
+							<div class="alert alert-danger"><%= mes %></div>
+						<% end %>
+						<%= f.text_field :height, class: 'mysize_textbox bottom_border_textbox', placeholder: 'Height' %>
+						<%= f.text_field :bust, class: 'mysize_textbox bottom_border_textbox', placeholder: 'Bust' %>
+						<%= f.text_field :waist, class: 'mysize_textbox', placeholder: 'Waist' %>
+					</div>
+	  				<%= button_tag( class: 'azure_button', type: :submit) do %>
+	  					SAVE
+	                <% end %>
+				<% end %>
+			</div>
 		</div>
 	</div>
 </div>

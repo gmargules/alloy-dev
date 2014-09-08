@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-	before_filter :current_user
+	before_filter :current_user, only: :edit
 
   def new
   	@user = User.new
@@ -7,30 +7,27 @@ class UsersController < ApplicationController
 
   def edit
   	if @current_user.id != params[:id]
-  		return redirect_to :back, alert: 'User does not match'
+  		head(401)
   	end
   end
 
+  def update
+  		head(402)
+  end
+
   def create
-  	if params[:user][:username].blank?
-  		return redirect_to :back, alert: 'Username is missing'
-  	end
-  	if params[:user][:password].blank? || params[:user][:confirm_password].blank?
-  		return redirect_to :back, alert: 'Password is missing'
-  	end
-  	if User.find_by(username: params[:user][:username])
-  		return redirect_to :back, alert: 'Username already exists'
-  	end
+
   	if params[:user][:password] != params[:user][:confirm_password]
   		return redirect_to :back, alert: 'Passwords does not match'
   	end
-  	if params[:user][:first_name].blank?
-  		return redirect_to :back, alert: 'First name is missing'
-  	end
-  	if params[:user][:last_name].blank?
-  		return redirect_to :back, alert: 'Last name is missing'
-  	end
-  	User.create(username: params[:user][:username], password: params[:user][:password], first_name: params[:user][:first_name], last_name: params[:user][:last_name])
-	render 'edit'
+  	
+  	@current_user = User.create(username: params[:user][:username], password: params[:user][:password], first_name: params[:user][:first_name], 
+  		last_name: params[:user][:last_name])
+  	if(@current_user)
+  		cookies.permanent[:token] = @current_user.access_token
+		render 'edit'
+	else
+		render 'new'
+	end
   end
 end
