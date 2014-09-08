@@ -10,11 +10,17 @@ class UsersController < ApplicationController
   end
 
   def create
-  	if User.find_by(username: params[:username])
+  	if User.find_by(username: params[:user][:username])
   		return redirect_to :back, alert: 'Username already exists'
   	end
-  	if params[:password] != params[:confirm_password]
+  	if params[:user][:password] != params[:user][:confirm_password]
   		return redirect_to :back, alert: 'Passwords does not match'
+  	end
+  	if params[:user][:first_name].blank
+  		return redirect_to :back, alert: 'First name is missing'
+  	end
+  	if params[:user][:last_name].blank
+  		return redirect_to :back, alert: 'Last name is missing'
   	end
   end
 end
