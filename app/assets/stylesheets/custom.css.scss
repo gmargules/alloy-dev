@@ -40,7 +40,8 @@ textarea:focus, input:focus{
 body {
 
     .alert-danger{
-       font-size: 30.89px;
+       //font-size: 30.89px;
+       font-size: 20px;
        width: 100%;
        color: #fe7272;
        border: 0;
@@ -60,12 +61,12 @@ body {
             display: inline-block;
             color: rgb(251,180,40);
             //font-size: 73.79px;
-            font-size: 39px;
+            font-size: 32px;
         }
         img{
             display: inline-block;
             //height: 52px;
-            height: 28px;
+            height: 23px;
             vertical-align: baseline;
             margin-left: 6px;
             //margin-left: 12px;
@@ -110,8 +111,8 @@ body {
         float: right;   
     }
     .settings_container{
-        right: 115px;
-        position: absolute; 
+        right: 45px;
+        position: absolute;
     }
     .not_a_member_container{
         float: left;
@@ -119,11 +120,14 @@ body {
     .logged_title_container{
         text-align: center;
         padding: 0;
-        margin-bottom: 30px;
+        //margin-bottom: 30px;
+        margin-bottom: 10px;
+        margin-top: 10px;
         h1{
             font-family: "arvil";
             color: rgb(251,180,40);
-            font-size: 104px;
+            //font-size: 104px;
+            font-size: 40px;
             width: 100%;
         }
         
@@ -134,26 +138,34 @@ body {
             font-family: "opensans";
             display: block;
             color: rgb(144,140,140);
-            font-size: 32px;
-            padding: 0 50px;
+            //font-size: 32px;
+            font-size: 18px;
+            //padding: 0 50px;
+            padding: 0 25px;
 
         }
         h2{
             font-family: "arvil";
             display: block;
             color: rgb(251,180,40);
-            font-size: 64px;
-            margin-bottom: 30px;
+            //font-size: 64px;
+            font-size: 26px;
+            //margin-bottom: 30px;
+            margin-bottom: 10px;
         }
     }
     .button_padding{
-        padding-right: 100px;
-        padding-left: 100px;
+        padding-right: 30px;
+        //padding-right: 100px;
+        padding-left: 30px;
+        //padding-left: 100px;
 
        .logout_button{
         font-family: "opensans";
-        font-size: 26px;
-        padding: 10px;
+        //font-size: 26px;
+        font-size: 12px;
+        //padding: 10px;
+        padding: 4px;
         } 
     }
     .login_button{
