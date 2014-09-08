@@ -2,6 +2,11 @@
 	<div class="row">
 		<div class="col-xs-12 col-md-12">
 			<% if @current_user %>
+				<div class="settings_container">		
+					<%= link_to edit_user_path(@current_user.id) do %>
+						<h2>SETTINGS</h2>
+					<%end%>
+				</div>	
 				<div class="logged_title_container">
 					<h1>HI <%= @current_user.first_name.upcase %>!</h1>
 				</div>
@@ -30,7 +35,7 @@
 	    		<div >
 					<%= form_tag login_path, method: :post do %>
 						<div class="textbox_container">
-							<%= text_field_tag :username, params[:username], class: 'mysize_textbox username_textbox', placeholder: 'USERNAME' %>
+							<%= text_field_tag :username, params[:username], class: 'mysize_textbox bottom_border_textbox', placeholder: 'USERNAME' %>
 							<%= password_field_tag :password, params[:password], class: 'mysize_textbox', placeholder: 'PASSWORD' %>
 			  			</div>
 			  				<%= button_tag( class: 'azure_button', type: :submit) do %>
@@ -41,7 +46,7 @@
 				</div>
 				<div >
 					<h2 class="forgot_container">FORGOT PASSWORD?</h2>
-					<%= link_to signup_path , class: 'not_a_member_container' do %>
+					<%= link_to new_user_path , class: 'not_a_member_container' do %>
 						<h2>NOT A MEMBER?</h2>
 					<%end%>
 				</div>

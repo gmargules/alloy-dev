@@ -58,13 +58,16 @@ body {
         h1{
             display: inline-block;
             color: rgb(251,180,40);
+            //font-size: 39.79px;
             font-size: 73.79px;
         }
         img{
             display: inline-block;
-            height: 52px;
+            //height: 52px;
+            height: 28px;
             vertical-align: baseline;
-            margin-left: 12px;
+            margin-left: 6px;
+            //margin-left: 12px;
         }
     }
     .textbox_container{
@@ -72,7 +75,7 @@ body {
         padding: 0;
         text-align: left;
         float: none;
-        margin-bottom: 30px;
+        margin-bottom: 50px;
 
         .mysize_textbox{
             margin: 0;
@@ -84,7 +87,8 @@ body {
             width: 100%;
             padding-left: 20px;
         }
-        .username_textbox{
+
+        .bottom_border_textbox{
             border-bottom: 2px solid rgba(4,4,4,0.25);
         }
 
@@ -99,6 +103,10 @@ body {
 
     .forgot_container{
         float: right;   
+    }
+    .settings_container{
+        right: 115px;
+        position: absolute; 
     }
     .not_a_member_container{
         float: left;

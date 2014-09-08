@@ -7,7 +7,6 @@ Mysize::Application.routes.draw do
   mount MySize::API => '/api'
   
   # web widget
-  get :signup, to: 'users#new'
   get :login, to: 'sessions#new'
   post :login, to: 'sessions#create'
   get :logout, to: 'sessions#destroy'
@@ -16,6 +15,7 @@ Mysize::Application.routes.draw do
   get :set_new_password, to: 'password_resets#edit'
   post :set_new_password, to: 'password_resets#update'
 
+  resources :users
   resource :web_widget do
   	get :main
   end
