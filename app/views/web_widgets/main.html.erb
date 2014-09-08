@@ -39,8 +39,11 @@
 			                <% end %>
 					<% end %>
 				</div>
-				<div class="forgot_container">
-					<h2>FORGOT PASSWORD?</h2>
+				<div >
+					<h2 class="forgot_container">FORGOT PASSWORD?</h2>
+					<%= link_to signup_path , class: 'not_a_member_container' do %>
+						<h2>NOT A MEMBER?</h2>
+					<%end%>
 				</div>
 			<% end %>
 		</div>

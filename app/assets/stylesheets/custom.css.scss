@@ -89,14 +89,19 @@ body {
         }
 
     }
+
+    h2{
+        font-family: "arvil";
+        color: #8c8b8b;
+        font-size: 36.89px;
+        cursor: pointer;
+    }
+
     .forgot_container{
-        text-align: right;
-        h2{
-            font-family: "arvil";
-            color: #8c8b8b;
-            font-size: 36.89px;
-            cursor: pointer;
-        }
+        float: right;   
+    }
+    .not_a_member_container{
+        float: left;
     }
     .logged_title_container{
         text-align: center;
