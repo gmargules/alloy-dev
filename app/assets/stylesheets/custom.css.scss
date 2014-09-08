@@ -54,7 +54,8 @@ body {
         text-align: center;
         width: 100%;
         //padding: 0 55px;
-        margin-bottom: 30px;
+        //margin-bottom: 30px;
+        margin-bottom: 10px;
         h1{
             display: inline-block;
             color: rgb(251,180,40);
@@ -75,13 +76,15 @@ body {
         padding: 0;
         text-align: left;
         float: none;
-        margin-bottom: 50px;
+        //margin-bottom: 50px;
+        margin-bottom: 10px;
 
         .mysize_textbox{
             margin: 0;
             border-radius: 2px;
             color: rgb(144,140,140);
-            font-size: 36.89px;
+            //font-size: 36.89px;
+            font-size: 20px;
             background-color: rgb(254,255,255);
             border: 0;
             width: 100%;
@@ -174,35 +177,16 @@ body {
     cursor: pointer;
     display: block;
     margin: 0 auto;
-    font-size: 54.19px;
+    //font-size: 54.19px;
+    font-size: 20px;
     border: 0;
 
-
-
-/*
-display: inline-block;
-margin-bottom: 0;
-font-weight: normal;
-text-align: center;
-vertical-align: middle;
-cursor: pointer;
-background-image: none;
-border: 1px solid transparent;
-white-space: nowrap;
-padding: 6px 12px;
-font-size: 14px;
-line-height: 1.428571429;
-border-radius: 4px;
--webkit-user-select: none;
-*/
-
 }
 
-.white_text{
-    color: rgb(254,255,255);
-}
-.yellow_text{
-    color: rgb(251,180,40);
+button{
+    img{
+        height: 10px;
+    }
 }
 
 
