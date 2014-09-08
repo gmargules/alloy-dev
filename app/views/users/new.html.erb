@@ -19,7 +19,7 @@
 						<%= f.text_field :first_name, class: 'mysize_textbox bottom_border_textbox', placeholder: 'FIRST NAME' %>
 						<%= f.text_field :last_name, class: 'mysize_textbox', placeholder: 'LAST NAME' %>
 		  			</div>
-	  				<%= button_tag( class: 'azure_button', type: :submit) do %>
+	  				<%= button_tag( id: 'new_user_next_button', class: 'azure_button', type: :submit) do %>
 	  					NEXT
 	                  <%= image_tag("login_arrow.png")%>
 	                <% end %>

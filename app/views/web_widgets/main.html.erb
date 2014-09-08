@@ -34,6 +34,7 @@
 
 	    		<div >
 					<%= form_tag login_path, method: :post do %>
+						<input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>" />
 						<div class="textbox_container">
 							<%= text_field_tag :username, params[:username], class: 'mysize_textbox bottom_border_textbox', placeholder: 'USERNAME' %>
 							<%= password_field_tag :password, params[:password], class: 'mysize_textbox', placeholder: 'PASSWORD' %>
