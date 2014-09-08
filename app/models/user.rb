@@ -80,6 +80,7 @@ class User < ActiveRecord::Base
 	    expose :last_name, documentation: { type: 'string', desc: "The user's last name" }
 	    expose :bust, documentation: { type: 'decimal', desc: "The user's bust size" }
 	    expose :waist, documentation: { type: 'decimal', desc: "The user's waist size" }
+	    expose :height, documentation: { type: 'decimal', desc: "The user's height size" }
 	end
 
 	class EntityWithToken < Entity
