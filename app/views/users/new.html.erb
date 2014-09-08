@@ -26,10 +26,9 @@
 				<% end %>
 			</div>
 		</div>
-		<div id = "first_step" class="col-xs-12 col-md-12" style="display: none;">
+		<div id = "second_step" class="col-xs-12 col-md-12" style="display: none;">
 			<div class="title_container">
 				<h1>BODY MEASURMENTS</h1>
-				<%= image_tag("mysize_logo.png") %>
 			</div>
     		<% unless flash[:alert].blank? %>
     			<div class="alert alert-danger"><%= flash[:alert] %></div>
@@ -37,14 +36,10 @@
     		<div >
 				<%= form_for @user, :html => {:autocomplete => "off"} do |f| %>
 					<div class="textbox_container">
-						<%= f.text_field :username, class: 'mysize_textbox bottom_border_textbox', placeholder: 'USERNAME' %>
-						<%= f.password_field :password, class: 'mysize_textbox bottom_border_textbox', placeholder: 'PASSWORD' %>
-						<%= f.password_field :confirm_password, class: 'mysize_textbox', placeholder: 'CONFIRM PASSWORD' %>
+						<%= f.text_field :Height, class: 'mysize_textbox bottom_border_textbox', placeholder: 'USERNAME' %>
+						<%= f.text_field :Bust, class: 'mysize_textbox bottom_border_textbox', placeholder: 'PASSWORD' %>
+						<%= f.text_field :Waist, class: 'mysize_textbox', placeholder: 'CONFIRM PASSWORD' %>
 					</div>
-					<div class="textbox_container">
-						<%= f.text_field :first_name, class: 'mysize_textbox bottom_border_textbox', placeholder: 'FIRST NAME' %>
-						<%= f.text_field :last_name, class: 'mysize_textbox', placeholder: 'LAST NAME' %>
-		  			</div>
 	  				<%= button_tag( class: 'azure_button', type: :submit) do %>
 	  					NEXT
 	                  <%= image_tag("login_arrow.png")%>
