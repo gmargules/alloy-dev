@@ -15,6 +15,10 @@
 						<section>Nice to see you again.<br>Your suggested size for this<br>product is:</section>
 						<h2><%= @result.name %></h2>
 					</div>
+				<% else %>
+					<div class="nice_container">
+						<section>Unfortunatley no size could be matched for you in this store.</section>
+					</div>
 				<% end %>
 				<div class="button_padding">
 					<%= link_to logout_path do %>

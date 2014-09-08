@@ -11,6 +11,9 @@
     		<div >
 				<%= form_for @user, :html => {:autocomplete => "off"} do |f| %>
 					<div class="textbox_container">
+						<% unless @user.errors.blank? %> 
+							<div class="alert alert-danger"><%=  @user.errors.full_messages.join(", ") %></div>
+						<% end %>
 						<%= f.text_field :username, class: 'mysize_textbox bottom_border_textbox', placeholder: 'USERNAME' %>
 						<%= f.password_field :password, class: 'mysize_textbox bottom_border_textbox', placeholder: 'PASSWORD' %>
 						<%= f.password_field :confirm_password, class: 'mysize_textbox', placeholder: 'CONFIRM PASSWORD' %>

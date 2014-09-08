@@ -30,7 +30,7 @@ class User < ActiveRecord::Base
 	before_create :generate_token
 	validates :username, uniqueness: true, :allow_blank => false
 	validates :first_name, :last_name, :password, presence: true	
-
+	validates_numericality_of :height, :waist, :bust
   	mount_uploader :thumb, ThumbUploader
   
   	scope :active, -> { where("is_blocked = ?", false) }
