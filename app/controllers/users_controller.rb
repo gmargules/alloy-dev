@@ -13,7 +13,7 @@ class UsersController < ApplicationController
 
   def update
   		@current_user.update_attributes(height: params[:user][:height], waist: params[:user][:waist], bust: params[:user][:bust])
-      #redirect_to main_web_widget_path  #with product and store
+      redirect_to :controller => 'web_widgets', :action => 'main', :product_id => (cookies.delete :product_id), :business_id => (cookies.delete :business_id)
   end
 
   def create
