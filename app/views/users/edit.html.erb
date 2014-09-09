@@ -13,15 +13,17 @@
 					<% unless @user.errors.blank? %> 
 						<div class="alert alert-danger"><%=  @user.errors.full_messages.join(", ") %></div>
 					<% end %>
-					<div class="edit_label_container">
-						<%= f.label :height %>
-						<%= f.label :bust %>
-						<%= f.label :waist %>
-					</div>
-					<div class="edit_field_container">
-						<%= f.text_field :height, class: 'mysize_textbox bottom_border_textbox' %>
-						<%= f.text_field :bust, class: 'mysize_textbox bottom_border_textbox' %>
-						<%= f.text_field :waist, class: 'mysize_textbox last_in_textbox' %>
+					<div class="labels_and_fields">
+						<div class="edit_label_container">
+							<%= f.label :height %>
+							<%= f.label :bust %>
+							<%= f.label :waist %>
+						</div>
+						<div class="edit_field_container">
+							<%= f.text_field :height, class: 'mysize_textbox bottom_border_textbox' %>
+							<%= f.text_field :bust, class: 'mysize_textbox bottom_border_textbox' %>
+							<%= f.text_field :waist, class: 'mysize_textbox last_in_textbox' %>
+						</div>
 					</div>
 					<div class="nice_container">
 						<section class="dont_know">*Don't know? Let us help you!</section>

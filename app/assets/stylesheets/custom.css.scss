@@ -75,48 +75,54 @@ body {
             //margin-left: 12px;
         }
     }
+    .labels_and_fields{
 
-    .edit_field_container{
-        box-shadow: 3px 5px 5px #cccccd;
-        padding: 0;
-        text-align: left;
-        float: none;
-        display: inline-block;
-        margin-bottom: 20px;
-
-        .mysize_textbox{
-            margin: 0;
-            border-radius: 2px;
-            color: rgb(144,140,140);
-            //font-size: 36.89px;
-            font-size: 20px;
-            background-color: rgb(254,255,255);
-            border: 0;
-            width: 100%;
-            padding-left: 20px;
-        }
-
-        .bottom_border_textbox{
-            border-bottom: 2px solid rgba(4,4,4,0.25);
-        }
-    }
-    .edit_label_container{
-        padding: 0;
-        text-align: left;
-        float: none;
-        display: inline-block;
-        margin-bottom: 20px;
-        width: 50px;
-
-        label{
-            display: block;
-            color: rgb(144,140,140);
-            font-size: 20px;
-            margin-bottom: 3px;
-            margin-right: 4px;
+        display: table;
+        .edit_field_container{
+            box-shadow: 3px 5px 5px #cccccd;
+            padding: 0;
             text-align: left;
+            float: none;
+            display: table-cell;
+            width: 100%;
+            margin-bottom: 20px;
+
+            .mysize_textbox{
+                margin: 0;
+                border-radius: 2px;
+                color: rgb(144,140,140);
+                //font-size: 36.89px;
+                font-size: 20px;
+                background-color: rgb(254,255,255);
+                border: 0;
+                width: 100%;
+                padding-left: 20px;
+            }
+
+            .bottom_border_textbox{
+                border-bottom: 2px solid rgba(4,4,4,0.25);
+            }
         }
+        .edit_label_container{
+            padding: 0;
+            text-align: left;
+            float: none;
+            display: table-cell;
+            margin-bottom: 20px;
+            width: 50px;
+
+            label{
+                display: block;
+                color: rgb(144,140,140);
+                font-size: 20px;
+                margin-bottom: 3px;
+                margin-right: 4px;
+                text-align: left;
+            }
+        }
+
     }
+    
 
     .textbox_container{
         box-shadow: 3px 5px 5px #cccccd;
