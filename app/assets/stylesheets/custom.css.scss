@@ -78,6 +78,8 @@ body {
     .labels_and_fields{
 
         display: table;
+        padding-bottom: 10px;
+
         .edit_field_container{
             box-shadow: 3px 5px 5px #cccccd;
             padding: 0;
@@ -98,6 +100,8 @@ body {
                 border: 0;
                 width: 100%;
                 padding-left: 20px;
+                padding-top: 1px;
+                padding-bottom: 1px;
             }
 
             .bottom_border_textbox{
