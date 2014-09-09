@@ -29,31 +29,11 @@
 				</div>
 			<% else %>
 				<div class="title_container">
-					<h1>SIGN IN WITH</h1>
-					<%= image_tag("mysize_logo.png") %>
+					<h1>SIGN IN</h1>
 				</div>
-	    		<% unless flash[:alert].blank? %>
-	    			<div class="alert alert-danger"><%= flash[:alert] %></div>
-	    		<% end %>
-
-	    		<div >
-					<%= form_tag login_path, method: :post do %>
-						<input name="<%= request_forgery_protection_token.to_s %>" type="hidden" value="<%= form_authenticity_token %>" />
-						<div class="textbox_container">
-							<%= text_field_tag :username, params[:username], class: 'mysize_textbox bottom_border_textbox', placeholder: 'USERNAME' %>
-							<%= password_field_tag :password, params[:password], class: 'mysize_textbox', placeholder: 'PASSWORD' %>
-			  			</div>
-			  				<%= button_tag( class: 'azure_button', type: :submit) do %>
-			  				LOGIN
-			                  <%= image_tag("login_arrow.png")%>
-			                <% end %>
-					<% end %>
-				</div>
-				<div >
-					<h2 class="forgot_container">FORGOT PASSWORD?</h2>
-					<%= link_to new_user_path , class: 'not_a_member_container' do %>
-						<h2>NOT A MEMBER?</h2>
-					<%end%>
+	    		<div class="nice_container">
+					<section>You are not logged in.<br>Please click on the button to login in a new tab.</section>
+					<%= link_to image_tag("mysize_logo.png", :alt => "MYSIZEID"), "http://mysize-dev.herokuapp.com/signin", :target => "_blank" %>
 				</div>
 			<% end %>
 		</div>
