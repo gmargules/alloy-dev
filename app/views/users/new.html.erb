@@ -16,9 +16,7 @@
 							<div class="alert alert-danger"><%=  @user.errors.full_messages.join(", ") %></div>
 						<% end %>
 						<%= f.text_field :username, class: 'mysize_textbox bottom_border_textbox', placeholder: 'USERNAME' %>
-						<%= f.password_field :password, class: 'mysize_textbox', placeholder: 'PASSWORD' %>
-					</div>
-					<div class="textbox_container">
+						<%= f.password_field :password, class: 'mysize_textbox bottom_border_textbox', placeholder: 'PASSWORD' %>
 						<%= f.text_field :first_name, class: 'mysize_textbox bottom_border_textbox', placeholder: 'FIRST NAME' %>
 						<%= f.text_field :last_name, class: 'mysize_textbox', placeholder: 'LAST NAME' %>
 		  			</div>
