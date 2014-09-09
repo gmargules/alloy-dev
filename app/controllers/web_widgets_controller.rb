@@ -3,8 +3,8 @@ class WebWidgetsController < ApplicationController
 	before_filter :current_user
 
 	def main
-		puts "AAAABBBB"
-		puts cookies[:token] 
+		puts "A"
+		puts @current_user 
 		cookies[:original_url] = params[:url]
 		cookies[:business_id] = params[:business_id]
 		cookies.permanent[:product_id] = params[:product_id]
@@ -15,7 +15,7 @@ class WebWidgetsController < ApplicationController
 
 			unless business.blank?
 				product = business.products.find_by(serial: params[:product_id])
-
+				puts "here!!!!!!!!!!"
 				unless product.blank?
 					# query the business's size chart
 					@result = business.sizes.where('category_id = :category and ((min_bust <= :bust and max_bust >= :bust) or (min_waist <= :waist and max_waist >= :waist))', category: product.category_id, bust: @current_user.bust, waist: @current_user.waist).first
