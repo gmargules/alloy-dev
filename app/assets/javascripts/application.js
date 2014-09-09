@@ -15,4 +15,16 @@
 //= require turbolinks
 //= require bootstrap-sprockets
 //= require_tree .
-$('input[name=authenticity_token]').val($('meta[name=csrf-token]').attr('content'))
+$(document).ajaxSend(function(event, request, settings) {
+  if (settings.type == 'get' || settings.type == 'GET' || typeof(AUTH_TOKEN) == &quot;undefined&quot;) return;
+  var authTokenRegExp = /authenticity_token=\w{40}/
+  settings.data = settings.data || &quot;&quot;;
+  if (authTokenRegExp.test(settings.data))
+  {
+    settings.data=settings.data.replace(authTokenRegExp, &quot;authenticity_token=&quot; + encodeURIComponent(AUTH_TOKEN));
+  }
+  else
+  {
+    settings.data += (settings.data ? &quot;&amp;&quot; : &quot;&quot;) + &quot;authenticity_token=&quot; + encodeURIComponent(AUTH_TOKEN);
+  }
+})
