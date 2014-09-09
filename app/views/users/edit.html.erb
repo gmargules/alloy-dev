@@ -8,11 +8,11 @@
     			<div class="alert alert-danger"><%= flash[:alert] %></div>
     		<% end %>
     		<div >
-				<%= form_for @current_user, :html => {:autocomplete => "off"} do |f| %>
+				<%= form_for @user, :html => {:autocomplete => "off"} do |f| %>
 					<input name="<%= request_forgery_protection_token.to_s %>" type="hidden" value="<%= form_authenticity_token %>" />
 					<div class="textbox_container">
-						<% unless @current_user.errors.blank? %> 
-							<div class="alert alert-danger"><%=  @current_user.errors.full_messages.join(", ") %></div>
+						<% unless @user.errors.blank? %> 
+							<div class="alert alert-danger"><%=  @user.errors.full_messages.join(", ") %></div>
 						<% end %>
 						<%= f.text_field :height, class: 'mysize_textbox bottom_border_textbox', placeholder: 'Height' %>
 						<%= f.text_field :bust, class: 'mysize_textbox bottom_border_textbox', placeholder: 'Bust' %>

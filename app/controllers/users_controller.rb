@@ -12,7 +12,8 @@ class UsersController < ApplicationController
   end
 
   def update
-  		@current_user.update_attributes(height: params[:user][:height], waist: params[:user][:waist], bust: params[:user][:bust])
+      @user = User.find_by(id: params[:id]);
+  		@user.update_attributes(height: params[:user][:height], waist: params[:user][:waist], bust: params[:user][:bust])
       redirect_to :controller => 'web_widgets', :action => 'main', :product_id => (cookies.delete :product_id), :business_id => (cookies.delete :business_id)
   end
 
@@ -20,8 +21,7 @@ class UsersController < ApplicationController
   	@user = User.new(username: params[:user][:username], password: params[:user][:password], first_name: params[:user][:first_name], 
   		last_name: params[:user][:last_name])
   	if(@user.save)
-  		@current_user = @user
-      cookies.permanent[:token] = @current_user.access_token
+      cookies.permanent[:token] = @user.access_token
 		  render 'edit'
 	  else
 		  render 'new'
