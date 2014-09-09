@@ -37,4 +37,7 @@ class UsersController < ApplicationController
 
   def login
   end
+
+  def successful_login
+  end
 end

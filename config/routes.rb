@@ -16,7 +16,9 @@ Mysize::Application.routes.draw do
   get :set_new_password, to: 'password_resets#edit'
   post :set_new_password, to: 'password_resets#update'
 
-  resources :users
+  resources :users do 
+    get :successful_login
+  end
   resource :web_widget do
   	get :main
   end
