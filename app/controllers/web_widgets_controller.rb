@@ -1,7 +1,11 @@
 class WebWidgetsController < ApplicationController
+	require 'uri' #decode url
 	before_filter :current_user
 
 	def main
+		puts "AAAAA"
+		puts params[:url]
+		puts URI.unescape(CGI::escape(Base64.decode64(params[:url])))
 		cookies[:business_id] = params[:business_id]
 		cookies.permanent[:product_id] = params[:product_id]
 		if @current_user
