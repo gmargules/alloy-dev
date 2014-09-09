@@ -16,11 +16,7 @@ class UsersController < ApplicationController
       redirect_to :controller => 'web_widgets', :action => 'main', :product_id => (cookies.delete :product_id), :business_id => (cookies.delete :business_id)
   end
 
-  def create
-  	if params[:user][:password] != params[:user][:confirm_password]
-  		return redirect_to :back, alert: 'Passwords does not match'
-  	end
-  	
+  def create	
   	@user = User.new(username: params[:user][:username], password: params[:user][:password], first_name: params[:user][:first_name], 
   		last_name: params[:user][:last_name])
   	if(@user.save)
