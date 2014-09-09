@@ -7,11 +7,6 @@ class UsersController < ApplicationController
 
   def edit
   	if @current_user.id != params[:id].to_i
-      puts 'current_id'
-      puts @current_user.id
-      puts 'params_id'
-      puts params[:id]
-      puts 'wow'
   		head(401)
     else
       @user = @current_user
