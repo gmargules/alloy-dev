@@ -20,6 +20,7 @@
 #  thumb                  :string(255)
 #  auth_type              :integer          default(0)
 #  access_token           :string(255)
+#  height                 :float            default(0.0)
 #
 
 class User < ActiveRecord::Base
