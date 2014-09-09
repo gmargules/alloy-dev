@@ -3,7 +3,8 @@ class SessionsController < ApplicationController
     user = User.find_by(username: params[:username])
     if user && user.password == params[:password]
       cookies.permanent[:token] = user.access_token
-      redirect_to user_successful_login_path(user.id)
+      var url  = cookies.delete(:original_url)
+      redirect_to url
     else
       return redirect_to :back, alert: 'Invalid username or password'
     end

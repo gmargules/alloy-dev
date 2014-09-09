@@ -5,6 +5,7 @@ class WebWidgetsController < ApplicationController
 	def main
 		puts "BBB"
 		puts params[:url]
+		cookies[:original_url] = params[:url]
 		cookies[:business_id] = params[:business_id]
 		cookies.permanent[:product_id] = params[:product_id]
 		if @current_user
