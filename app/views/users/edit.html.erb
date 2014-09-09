@@ -10,15 +10,19 @@
     		<div >
 				<%= form_for @user, :html => {:autocomplete => "off"} do |f| %>
 					<input name="<%= request_forgery_protection_token.to_s %>" type="hidden" value="<%= form_authenticity_token %>" />
-					<div class="textbox_container">
-						<% unless @user.errors.blank? %> 
-							<div class="alert alert-danger"><%=  @user.errors.full_messages.join(", ") %></div>
-						<% end %>
-						<%= f.text_field :height, class: 'mysize_textbox bottom_border_textbox', placeholder: 'Height' %>
-						<%= f.text_field :bust, class: 'mysize_textbox bottom_border_textbox', placeholder: 'Bust' %>
-						<%= f.text_field :waist, class: 'mysize_textbox', placeholder: 'Waist' %>
+					<% unless @user.errors.blank? %> 
+						<div class="alert alert-danger"><%=  @user.errors.full_messages.join(", ") %></div>
+					<% end %>
+					<div class="edit_label_container">
+						<%= f.label :height %>
+						<%= f.label :bust %>
+						<%= f.label :waist %>
 					</div>
-
+					<div class="edit_field_container">
+						<%= f.text_field :height, class: 'mysize_textbox bottom_border_textbox' %>
+						<%= f.text_field :bust, class: 'mysize_textbox bottom_border_textbox' %>
+						<%= f.text_field :waist, class: 'mysize_textbox last_in_textbox' %>
+					</div>
 					<div class="nice_container">
 						<section class="dont_know">*Don't know? Let us help you!</section>
 						<%= link_to('some_long_path.html') do %>
