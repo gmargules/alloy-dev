@@ -15,16 +15,3 @@
 //= require turbolinks
 //= require bootstrap-sprockets
 //= require_tree .
-$(document).ajaxSend(function(event, request, settings) {
-  if (settings.type == 'get' || settings.type == 'GET' || typeof(AUTH_TOKEN) == "undefined") return;
-  var authTokenRegExp = /authenticity_token=\w{40}/
-  settings.data = settings.data || "";
-  if (authTokenRegExp.test(settings.data))
-  {
-    settings.data=settings.data.replace(authTokenRegExp, "authenticity_token=" + encodeURIComponent(AUTH_TOKEN));
-  }
-  else
-  {
-    settings.data += (settings.data ? "&" : "") + "authenticity_token=" + encodeURIComponent(AUTH_TOKEN);
-  }
-})
