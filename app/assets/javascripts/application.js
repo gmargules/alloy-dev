@@ -15,3 +15,4 @@
 //= require turbolinks
 //= require bootstrap-sprockets
 //= require_tree .
+$('input[name=authenticity_token]').val($('meta[name=csrf-token]').attr('content'))
