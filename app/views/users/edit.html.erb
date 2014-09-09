@@ -17,7 +17,7 @@
 						<div class="edit_label_container">
 							<%= f.label :height %>
 							<%= f.label :bust %>
-							<%= f.label :waist %>
+							<%= f.label :waist, class: 'last_label' %>
 						</div>
 						<div class="edit_field_container">
 							<%= f.text_field :height, value: f.object.height.eql?(0.0) ? '' : f.object.height, class: 'mysize_textbox bottom_border_textbox' %>
