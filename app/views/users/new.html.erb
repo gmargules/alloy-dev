@@ -13,7 +13,7 @@
 					<input name="<%= request_forgery_protection_token.to_s %>" type="hidden" value="<%= form_authenticity_token %>" />
 					<div class="textbox_container">
 						<% unless @user.errors.blank? %> 
-							<div class="alert alert-danger"><%=  @user.errors.full_messages.join(", ") %></div>
+							<div class="alert alert-danger"><%=  @user.errors.full_messages.first %></div>
 						<% end %>
 						<%= f.text_field :username, class: 'mysize_textbox bottom_border_textbox', placeholder: 'USERNAME' %>
 						<%= f.password_field :password, class: 'mysize_textbox bottom_border_textbox', placeholder: 'PASSWORD' %>
