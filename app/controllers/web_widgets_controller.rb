@@ -3,8 +3,8 @@ class WebWidgetsController < ApplicationController
 	before_filter :current_user
 
 	def main
-		puts "BBB"
-		puts params[:url]
+		puts "AAAABBBB"
+		puts cookies[:token] 
 		cookies[:original_url] = params[:url]
 		cookies[:business_id] = params[:business_id]
 		cookies.permanent[:product_id] = params[:product_id]
