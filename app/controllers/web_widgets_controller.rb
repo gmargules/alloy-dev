@@ -9,6 +9,7 @@ class WebWidgetsController < ApplicationController
 		cookies[:business_id] = params[:business_id]
 		cookies.permanent[:product_id] = params[:product_id]
 		if @current_user
+			puts "here!!!!!!!!!!"
 			# suggest a size for the given product; get business and product
 			business = Business.active.find_by(token: params[:business_id])
 
