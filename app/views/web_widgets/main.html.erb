@@ -2,10 +2,10 @@
 	<div class="row">
 		<div class="col-xs-12 col-md-12">
 			<% if @current_user %>
-				<div class="settings_container">		
+				<div class="settings_container">
 					<%= link_to edit_user_path(@current_user.id) do %>
-						<h2>SETTINGS</h2>
-					<%end%>
+						<%= image_tag "mysize_settings.png", :class => "settings_image" %>
+					<% end %>
 				</div>	
 				<div class="logged_title_container">
 					<h1>HI <%= @current_user.first_name.upcase %>!</h1>

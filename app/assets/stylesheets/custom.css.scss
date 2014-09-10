@@ -38,7 +38,10 @@ textarea:focus, input:focus{
 
 
 body {
-
+    .settings_image{
+        width: 20px;
+        height: 20px;
+    }
     .alert-danger{
        //font-size: 30.89px;
        padding: 3px;
