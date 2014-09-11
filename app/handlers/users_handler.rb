@@ -45,12 +45,12 @@ class UsersHandler < MySize::API
     end
 
     # get the user
-    @current_user = User.active.find_by(username: params[:username])
+    @current_user = User.active.find_by(username: params[:username].downcase)
 
     unless @current_user.blank?
       # user exists - validate credentials if needed
       if params[:auth_type] == User::AUTH_TYPE_PASSWORD
-        unless @current_user.password == params[:password]
+        unless @current_user.password == params[:password].downcase
           error!('Invalid username or password', HTTP_UNAUTHORIZED)
         end
       end
@@ -61,8 +61,8 @@ class UsersHandler < MySize::API
 
         @current_user.first_name = params[:first_name]
         @current_user.last_name = params[:last_name]
-        @current_user.username = params[:username]
-        @current_user.password = params[:password]
+        @current_user.username = params[:username].downcase
+        @current_user.password = params[:password].downcase
         @current_user.auth_type = params[:auth_type]
 
         error!('Could not create user', HTTP_INTERNAL_SERVER_ERROR) unless @current_user.save

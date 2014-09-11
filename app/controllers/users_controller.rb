@@ -26,7 +26,7 @@ class UsersController < ApplicationController
   end
 
   def create	
-  	@user = User.new(username: params[:user][:username], password: params[:user][:password], first_name: params[:user][:first_name], 
+  	@user = User.new(username: params[:user][:username].downcase, password: params[:user][:password].downcase, first_name: params[:user][:first_name], 
   		last_name: params[:user][:last_name])
   	if(@user.save)
       cookies.permanent[:token] = @user.access_token
