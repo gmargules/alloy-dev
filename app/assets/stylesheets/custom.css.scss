@@ -180,10 +180,11 @@ body {
     }
 
     .forgot_container{
-        float: right;   
+        float: right;
+        font-size: 13px;   
     }
     .settings_container{
-        left: 45px;
+        left: 15px;
         position: absolute;
         h2{
             font-size: 14px;
@@ -191,6 +192,7 @@ body {
     }
     .not_a_member_container{
         float: left;
+        font-size: 13px;
     }
     .logged_title_container{
         text-align: center;
@@ -212,8 +214,8 @@ body {
             font-family: "ariel";
             display: block;
             color: rgb(3,3,3);
-            font-size: 20px;
-            padding-bottom: 20px;
+            font-size: 18px;
+            margin-bottom: 13px;
             padding: 0;
 
         }
