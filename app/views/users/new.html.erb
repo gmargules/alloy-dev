@@ -3,7 +3,7 @@
 		<div class="col-xs-12 col-md-12">
 			<div class="title_container">
 				<h1>SIGN UP TO</h1>
-				<%= image_tag("mysize_logo.png") %>
+				<%= image_tag("mysize_logo_1.png") %>
 			</div>
     		<% unless flash[:alert].blank? %>
     			<div class="alert alert-danger"><%= flash[:alert] %></div>
@@ -21,7 +21,7 @@
 						<%= f.text_field :last_name, class: 'mysize_textbox', placeholder: 'LAST NAME' %>
 		  			</div>
 	  				<%= button_tag( id: 'new_user_next_button', class: 'azure_button', type: :submit) do %>
-	  					NEXT
+	  					Next
 	                  <%= image_tag("login_arrow.png")%>
 	                <% end %>
 				<% end %>
